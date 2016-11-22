@@ -9,17 +9,16 @@ export default () => ({ // eslint-disable-line
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
-  publishedDate: new Date(),
+  publishedDate: new Date('2016-11-18T17:11:22Z'),
 
-  headline: 'Politics and the English Language',
+  headline: 'Trump’s picks: how the new administration is taking shape',
 
   // summary === standfirst (Summary is what the content API calls it)
-  summary: 'Political language is designed to make lies sound truthful' +
-           'and murder respectable, and to give an appearance of solidity to pure wind',
+  summary: 'FT guide to the main players in the transition team and future cabinet',
 
   topic: {
-    name: 'Starter Kit',
-    url: '/foo',
+    name: 'Donald Trump',
+    url: 'https://www.ft.com/topics/people/Donald_Trump',
   },
 
   relatedArticle: {
@@ -38,8 +37,8 @@ export default () => ({ // eslint-disable-line
   // Byline can by a plain string, markdown, or array of authors
   // if array of authors, url is optional
   byline: [
-    { name: 'Author One', url: '/foo/bar' },
-    { name: 'Author Two' },
+    { name: 'Claire Manibog', url: 'https://www.ft.com/stream/authorsId/ZGVhNjk2NmEtN2ZkNy00NDllLTkyODAtYjE2NWNmNjg0NTcx-QXV0aG9ycw==' },
+    { name: 'Ændrew Rininsland', url: 'https://www.ft.com/topics/authors/%C3%86ndrew_Rininsland' },
   ],
 
   // Appears in the HTML <title>
