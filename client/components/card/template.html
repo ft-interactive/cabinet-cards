@@ -1,0 +1,28 @@
+{% from "components/myft-follow/button.html" import FollowButton -%}
+
+{% macro Card(i) %}
+  {% if i.name %}
+  <div class="cardthing" style="background-color:#fff; margin-bottom:10px; padding:10px;">
+  	<h1 style="margin-bottom:0;">{{ i.role }}</h1>
+    <h2 style="margin-botton:0;">{{ i.name}} {{ FollowButton(i.topicid, i.name, 'people')}}</h2>
+  	<figure class="graphic graphic-b-1 graphic-pad-1">
+  	  <img alt="" src="https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2F{{ i.picurl }}?source=ig&fit=scale-down&width=700"></img>
+  	    <figcaption class="o-typography-caption">&#xA9;{{ i.picsource }}</figcaption>
+  	</figure>
+    {{ i.copy | safe }}
+
+    {% if i.links %}
+  	<h3>More on {{i.name}}:</h3>
+  	<ul>
+      {% for item in i.links %}
+  		<li><a href="{{ item.url }}">{{ item.headline }}</a> {{ item.date }}</li>
+      {% endfor %}
+  	</ul>
+    {% endif %}
+  </div>
+  {% elif i.role %}
+  <div class="cardthing" style="background-color:#fff; margin-bottom:10px; padding:10px;">
+  	<h1 style="margin-bottom:0;">{{ i.role }}</h1>
+  </div>
+  {% endif %}
+{% endmacro %}

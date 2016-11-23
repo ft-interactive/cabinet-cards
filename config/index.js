@@ -1,36 +1,34 @@
 import article from './article';
 import getFlags from './flags';
-import getOnwardJourney from './onward-journey';
+import axios from 'axios';
 
 export default async function() {
   const d = await article();
   const flags = await getFlags();
-  const onwardJourney = await getOnwardJourney();
-  /*
-  An experimental demo that gets content from the API
-  and overwrites some model values. This requires the Link File
-  to have been published. Also next-es-interface.ft.com probably
-  isn't a reliable source. Also this has no way to prevent development
-  values being seen in productions... use with care.
+  const endpoint = 'http://bertha.ig.ft.com/view/publish/gss/13EB-5GbFnLx_1BjI6dIed3F9SobAetJG7gNaj2So5oA/data';
+  const cards = {};
 
   try {
-    const a = (await axios(`https://next-es-interface.ft.com/content/${d.id}`)).data;
-    d.headline = a.title;
-    d.byline = a.byline;
-    d.summary = a.summaries[0];
-    d.title = d.title || a.title;
-    d.description = d.description || a.summaries[1] || a.summaries[0];
-    d.publishedDate = new Date(a.publishedDate);
-    f.comments = a.comments;
-  } catch (e) {
-    console.log('Error getting content from content API');
-  }
+    const res = await axios(endpoint);
+    const data = res.data;
+    cards.selected = data.filter(d => d.style === 'selected');
+    cards.unfilled = data.filter(d => d.style !== 'selected');
 
-  */
+    cards.selected.map(async d => {
+      const url = `https://ig.ft.com/onwardjourney/v1/thing/${d.topicid}/json?limit=5`;
+      const res = await axios(url);
+      d.links = res.data;
+
+      return d;
+    });
+  } catch (e) {
+    // console.error(e);
+    console.log('Error getting content from Bertha');
+  }
 
   return {
     ...d,
+    cards,
     flags,
-    onwardJourney,
   };
 }

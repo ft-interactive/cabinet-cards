@@ -1,9 +1,7 @@
 {% extends "layout.html" %}
+{% from "components/card/template.html" import Card -%}
 
 {% block article_body %}
-{% markdown %}
-
-
 
 <figure class="graphic graphic-b-1 graphic-pad-1">
   <img alt="" src="https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2F407b7a38-aa90-11e6-ba7d-76378e4fef24?source=ig&fit=scale-down&width=700"></img>
@@ -12,53 +10,18 @@
 
 <p><a href="https://www.ft.com/topics/people/Donald_Trump" data-trackable="link">Donald Trump</a> has begun&nbsp;<a href="/content/c9edec6a-aa81-11e6-9cb3-bb8207902122" data-trackable="link">putting together</a> his transition team and naming the cabinet members who will come to power in Washington after the inauguration on January 20. Follow the FT’s guide to the main players he has already picked — and the positions yet to be filled — here.</p>
 
-<!-- repeating card section starts -->
-<div class="cardthing" style="background-color:#fff; margin-bottom:10px; padding:10px;">
-	<h1 style="margin-bottom:0;">Vice-president</h1>
-	<h2 style="margin-top:0"><a href="https://www.ft.com/topics/people/Mike_Pence">Mike Pence</a> [+ FOLLOW]</h2>
-	<figure class="graphic graphic-b-1 graphic-pad-1">
-	  <img alt="" src="https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2F230807d6-abf9-11e6-ba7d-76378e4fef24?source=ig&fit=scale-down&width=700"></img>
-	    <figcaption class="o-typography-caption">&#xA9;AFP</figcaption>
-	</figure>
-	<p>Mike Pence, the Indiana governor and former congressman, was picked as Donald Trump’s running mate for having what the property tycoon lacked: experience of governing and knowledge of Washington. After his victory Mr Trump asked Mr Pence, a Washington insider, to head the transition team filling hundreds of posts in the White House and elsewhere, offering hope to lawmakers and lobbyists eager to see familiar faces in power.</p>
-	<p>It is a turnround for Mr Pence to be embraced as a force of moderation. He was a rigid social conservative during a decade in Congress and sparked a furore in 2015 for pushing a law that backed religious freedom in Indiana at the expense of gay rights.</p>
-	<h3>More on Mike Pence:</h3>
-	<ul>
-		<li><a href="">Trump faces fight over new ‘war on terror’</a> DATE</li>
-		<li><a href="">Trump says retired general Mattis in running for Pentagon</a> DATE</li>
-		<li><a href="">Trump demands apology from ‘Hamilton’ cast</a> DATE</li>
-	</ul>
-</div>
-
-<div class="cardthing" style="background-color:#fff; margin-bottom:10px; padding:10px;">
-	<h1 style="margin-bottom:0;">White House chief of staff</h1>
-	<h2 style="margin-top:0"><a href="https://www.ft.com/stream/peopleId/YmQ2M2MwOTMtYjdlYi00NjI5LWExMTMtMzUwNDVkMGYyODk1-UE4=">Reince Priebus</a> [+ FOLLOW]</h2>
-	<figure class="graphic graphic-b-1 graphic-pad-1">
-	  <img alt="" src="https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2F9d22a59a-a9f0-11e6-a0bb-97f42551dbf4?source=ig&fit=scale-down&width=700"></img>
-	    <figcaption class="o-typography-caption"><!--&#xA9;AFP--></figcaption>
-	</figure>
-	<p>A Wisconsin-raised lawyer who has never held elected office, Mr Priebus has run the Republican National Committee for a record six years. He has been credited with improving the party’s financial position and investing in the kind of data operations that President Barack Obama used to beat John McCain and Mitt Romney in their 2008 and 2012 election races.</p><p>The appointment of Mr Priebus catapults him to one of the most powerful positions in Washington. But he will have to share his place near the top of the power pyramid with Stephen Bannon.</p>
-	<h3>More on Reince Priebus:</h3>
-	<ul>
-		<li><a href="">Trump says retired general Mattis in running for Pentagon</a> DATE</li>
-		<li><a href="">Trump’s picks: how the new administration is taking shape</a> DATE</li>
-		<li><a href="">Mike Pence arrives at the threshold of power</a> DATE</li>
-	</ul>
-</div>
-<!-- repeating card section starts -->
-
+{# repeating card section starts #}
+{% for item in cards.selected %}
+{{ Card(item) }}
+{% endfor %}
+{# repeating card section ends #}
 
 <h1>Positions that have yet to be filled</h1>
 
-<!-- Repeating empty cards start -->
-<div class="cardthing" style="background-color:#fff; margin-bottom:10px; padding:10px;">
-	<h1 style="margin-bottom:0;">Secretary&nbsp;of State</h1>
-</div>
+{# repeating card section starts #}
+{% for item in cards.unfilled %}
+{{ Card(item) }}
+{% endfor %}
+{# repeating card section ends #}
 
-<div class="cardthing" style="background-color:#fff; margin-bottom:10px; padding:10px;">
-	<h1 style="margin-bottom:0;">Secretary&nbsp;of the Treasury</h1>
-</div>
-<!-- Repeating empty cards end -->
-
-{% endmarkdown %}
 {% endblock %}
