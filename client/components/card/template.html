@@ -10,12 +10,11 @@
   	    <figcaption class="o-typography-caption">&#xA9;{{ i.picsource }}</figcaption>
   	</figure>
     {{ i.copy | safe }}
-
     {% if i.links %}
   	<h3>More on {{i.name}}:</h3>
   	<ul>
       {% for item in i.links %}
-  		<li><a href="{{ item.url }}">{{ item.headline }}</a> {{ item.date }}</li>
+  		<li><a href="//www.ft.com/content/{{ item.id }}">{{ item.title }}</a>{#{{ item.publishedDate }}#}</li>
       {% endfor %}
   	</ul>
     {% endif %}

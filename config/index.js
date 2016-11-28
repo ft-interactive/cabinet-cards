@@ -11,16 +11,15 @@ export default async function() {
   try {
     const res = await axios(endpoint);
     const data = res.data;
-    cards.selected = data.filter(d => d.style === 'selected');
     cards.unfilled = data.filter(d => d.style !== 'selected');
+    cards.selected = await Promise.all(data.filter(d => d.style === 'selected')
+      .map(async d => {
+        const url = `https://ig.ft.com/onwardjourney/v1/thing/${d.topicid}/json?limit=5`;
+        const res = await axios(url);
+        d.links = res.data.items;
 
-    cards.selected.map(async d => {
-      const url = `https://ig.ft.com/onwardjourney/v1/thing/${d.topicid}/json?limit=5`;
-      const res = await axios(url);
-      d.links = res.data;
-
-      return d;
-    });
+        return d;
+      }));
   } catch (e) {
     // console.error(e);
     console.log('Error getting content from Bertha');
