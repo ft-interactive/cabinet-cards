@@ -1,50 +1,10 @@
 @import 'o-colors/main';
-@import 'components/core/main';
 @import 'o-buttons/main';
+@import 'o-card/main';
 
-$o-buttons-is-silent: false;
-/*
-      TODO: delete this comment
-
-      Write your code here - keep it neat!
-      Split logical parts of you project into components e.g.
-
-      /client
-        - /components
-            - /component-name
-                - styles.scss
-                - index.js
-                - template.html
-*/
-
-.follow-button-form {
-  display: inline;
+@function getColor($args...) {
+  @return oColorsGetPaletteColor($args...);
 }
 
-.follow-button {
-  @include oButtons();
-  color: #26747a;
-  background-color: hsla(0,0%,100%,.4);
-  border: 1px solid rgba(38,116,122,.15);
-  padding-left: 26px;
-  position: relative;
-  float: right;
-
-  &:before {
-    background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon:plus?source=o-icons&tint=%2326747A,%2326747A&format=svg);
-    background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon:plus?source=o-icons&tint=%2326747A,%2326747A&format=png&width=12)\9;
-    content: ' ';
-    position: absolute;
-    top: 50%;
-    left: 7px;
-    margin: -6px 7px 0 0;
-    width: 12px;
-    height: 12px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 50%;
-    background-color: transparent;
-    vertical-align: baseline;
-  }
-}
+@import 'components/core/main';
+@import 'components/card/card';

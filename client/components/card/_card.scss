@@ -1,0 +1,88 @@
+.follow-button-form {
+  display: inline;
+}
+
+.follow-button {
+  @include oButtons();
+  color: #26747a;
+  background-color: hsla(0,0%,100%,.4);
+  border: 1px solid rgba(38,116,122,.15);
+  padding-left: 26px;
+  position: relative;
+  float: right;
+
+  &:before {
+    background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon:plus?source=o-icons&tint=%2326747A,%2326747A&format=svg);
+    background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon:plus?source=o-icons&tint=%2326747A,%2326747A&format=png&width=12)\9;
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    left: 7px;
+    margin: -6px 7px 0 0;
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+    background-color: transparent;
+    vertical-align: baseline;
+  }
+}
+
+
+.card-position {
+  @include oCard;
+  background: white;
+  padding: 1em 40px;
+  box-shadow: 0 0 5px 1px rgba(0,0,0,.25);
+
+  &__position {
+    margin: 1em auto .5em !important;
+  }
+
+  &__name {
+    @include oTypographySans(m);
+    color: getColor('grey-tint5');
+    margin-top: .5em !important;
+    margin-bottom: .5em !important;
+  }
+
+  &__image {
+    margin: 1em 0;
+    padding: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__onward-headline {
+    position: relative;
+    margin-bottom: 1.5em;
+    @include oTypographySansBold(m);
+    color: getColor('grey-tint5');
+
+    &:after {
+      content: "";
+      position: absolute;
+      height: .25em;
+      border-top: .25em solid getColor('grey-tint5');
+      width: 10%;
+      bottom: -0.8em;
+      left: 0;
+    }
+  }
+
+  &__onward-links {}
+
+  &__onward-link {
+    color: getColor('grey-tint5') !important;
+    border-bottom: none !important;
+    @include oTypographySansBold(s);
+
+    &:hover {
+      border-bottom: 1px dotted getColor('grey-tint5') !important;
+    }
+  }
+}
