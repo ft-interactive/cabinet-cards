@@ -22,13 +22,19 @@ export default async function() {
     cards.selected = await Promise.all(data.filter(d => d.style === 'selected')
       .map(async d => {
         const url = `https://ig.ft.com/onwardjourney/v1/thing/${d.topicid}/json?limit=5`;
-        const res = await axios(url);
-        d.links = res.data.items;
+
+        try {
+          const res = await axios(url);
+          d.links = res.data.items;
+        } catch(e) {
+          // console.error(`Error getting Onward Journey for ${d.name}`);
+          d.links = [];
+        }
 
         return d;
       }));
   } catch(e) {
-    console.error('Error getting Onward Journey');
+    console.error(e);
     cards.selected = data.filter(d => d.style === 'selected');
   }
 
