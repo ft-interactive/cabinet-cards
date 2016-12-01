@@ -16,8 +16,9 @@ export default async function() {
     console.log('Error getting content from Bertha');
   }
 
+  cards.unfilled = data.filter(d => d.style !== 'selected');
+
   try {
-    cards.unfilled = data.filter(d => d.style !== 'selected');
     cards.selected = await Promise.all(data.filter(d => d.style === 'selected')
       .map(async d => {
         const url = `https://ig.ft.com/onwardjourney/v1/thing/${d.topicid}/json?limit=5`;
@@ -28,9 +29,8 @@ export default async function() {
       }));
   } catch(e) {
     console.error('Error getting Onward Journey');
+    cards.selected = data.filter(d => d.style === 'selected');
   }
-
-
 
   return {
     ...d,
