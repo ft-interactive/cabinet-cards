@@ -33,19 +33,21 @@
 
 .card-position {
   @include oCard;
-  background: white;
+  background: #FDF8F2;
   padding: 1em 40px;
-  box-shadow: 0 0 5px 1px rgba(0,0,0,.25);
+  box-shadow: 0 1px 2px 1px rgba(0,0,0,.15);
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
 
   &__position {
     margin: 1em auto .5em !important;
   }
 
   &__name {
-    @include oTypographySans(m);
+    @include oTypographySansBold(m);
     color: getColor('grey-tint5');
-    margin-top: .5em !important;
-    margin-bottom: .5em !important;
+    margin-top: .1em !important;
+    margin-bottom: .1em !important;
   }
 
   &__image {
@@ -59,7 +61,8 @@
 
   &__onward-headline {
     position: relative;
-    margin-bottom: 1.5em;
+    font-size: 1.1em !important;
+    margin: 1.6em 0 1.5em;
     @include oTypographySansBold(m);
     color: getColor('grey-tint5');
 
@@ -67,14 +70,17 @@
       content: "";
       position: absolute;
       height: .25em;
-      border-top: .25em solid getColor('grey-tint5');
+      border-top: .24em solid getColor('grey-tint5');
       width: 10%;
       bottom: -0.8em;
       left: 0;
     }
   }
 
-  &__onward-links {}
+  &__onward-links {
+    margin-bottom: 1.4em !important;
+    
+  }
 
   &__onward-link {
     color: getColor('grey-tint5') !important;
@@ -82,7 +88,8 @@
     @include oTypographySansBold(s);
 
     &:hover {
-      border-bottom: 1px dotted getColor('grey-tint5') !important;
+    color: #807970 !important;
+    border-bottom-color: transparent;
     }
   }
 }
