@@ -13,7 +13,7 @@
     </figure>
     <div class="card-position__body">
       {{ i.copy | safe }}
-      {% if i.links %}
+      {% if i.links.length > 0 %}
       <div class="card-position__onward-headline">
         More on {{i.name}}:
       </div>

@@ -27,7 +27,7 @@ export default async function() {
           const res = await axios(url);
           d.links = res.data.items;
         } catch(e) {
-          console.error(`Error getting Onward Journey for ${d.name}`);
+          // console.error(`Error getting Onward Journey for ${d.name}`);
           d.links = [];
         }
 
