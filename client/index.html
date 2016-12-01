@@ -16,7 +16,9 @@
 {% endfor %}
 {# repeating card section ends #}
 
+{% if cards.unfilled.length > 0 %}
 <h1>Positions that have yet to be filled</h1>
+{% endif %}
 
 {# repeating card section starts #}
 {% for item in cards.unfilled %}
