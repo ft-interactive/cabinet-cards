@@ -4,7 +4,7 @@
   {% if i.name %}
   <h1 class="card-position__position">{{ i.role }}</h1>
   <div class="card-position" data-o-component="o-card">
-    <h2 class="card-position__name"><a href="https://www.ft.com/stream/peopleId/{{ i.topicid }}">{{ i.name}}</a> {{ FollowButton(i.topicid, i.name, 'people')}}</h2>
+    <h2 class="card-position__name">{% if i.topicid %}<a href="https://www.ft.com/stream/peopleId/{{ i.topicid }}">{{ i.name }}</a>  {{ FollowButton(i.topicid, i.name, 'people')}}{% else %}{{ i.name }}{% endif %}</h2>
     <figure class="card-position__image">
       <img alt="" src="https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2F{{ i.picurl }}?source=ig&fit=scale-down&width=700"></img>
         <figcaption class="o-typography-caption">
