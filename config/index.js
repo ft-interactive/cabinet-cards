@@ -20,18 +20,18 @@ export default async function() {
 
   try {
     cards.selected = await Promise.all(data.filter(d => d.style === 'selected')
-      .map(async d => {
-        const url = `https://ig.ft.com/onwardjourney/v1/thing/${d.topicid}/json?limit=5`;
-
+      .map(async card => {
+        const url = `https://ig.ft.com/onwardjourney/v1/thing/${card.topicid}/json?limit=5`;
         try {
           const res = await axios(url);
-          d.links = res.data.items;
+          card.links = res.data.items.filter(v => v.id !== d.id); // Filter this item out.
         } catch(e) {
-          // console.error(`Error getting Onward Journey for ${d.name}`);
-          d.links = [];
+          console.error(`Error getting Onward Journey for ${card.name}`);
+          console.log(url);
+          card.links = [];
         }
 
-        return d;
+        return card;
       }));
   } catch(e) {
     console.error(e);
