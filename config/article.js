@@ -42,10 +42,10 @@ export default () => ({ // eslint-disable-line
   ],
 
   // Appears in the HTML <title>
-  title: '',
+  title: 'Trump’s picks: how the new administration is taking shape',
 
   // meta data
-  description: '',
+  description: 'FT guide to the main players in the transition team and future cabinet',
 
   /*
   TODO: Select Twitter card type -
