@@ -7,10 +7,16 @@ export default async function() {
   const flags = await getFlags();
   const endpoint = 'http://bertha.ig.ft.com/view/publish/gss/13EB-5GbFnLx_1BjI6dIed3F9SobAetJG7gNaj2So5oA/data';
   const cards = {};
+  let data;
 
   try {
     const res = await axios(endpoint);
-    const data = res.data;
+    data = res.data;
+  } catch (e) {
+    console.log('Error getting content from Bertha');
+  }
+
+  try {
     cards.unfilled = data.filter(d => d.style !== 'selected');
     cards.selected = await Promise.all(data.filter(d => d.style === 'selected')
       .map(async d => {
@@ -20,10 +26,11 @@ export default async function() {
 
         return d;
       }));
-  } catch (e) {
-    // console.error(e);
-    console.log('Error getting content from Bertha');
+  } catch(e) {
+    console.error('Error getting Onward Journey');
   }
+
+
 
   return {
     ...d,
