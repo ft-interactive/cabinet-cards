@@ -48,7 +48,15 @@
     color: getColor('grey-tint5');
     margin-top: .1em !important;
     margin-bottom: .1em !important;
+    & a {
+      color: getColor('grey-tint5');
+      border-bottom-color: transparent;
   }
+
+    & a:hover {
+    color: #807970 !important;
+    }
+}
 
   &__image {
     margin: 1em 0;
