@@ -5,16 +5,16 @@ export default () => ({ // eslint-disable-line
 
   // canonical URL of the published page
   // https://ig.ft.com/trump-cabinet/ get filled in by the ./configure script
-  url: 'https://ig.ft.com/trump-cabinet/',
+  url: 'https://ig.ft.com/sites/trump-cabinet/',
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
   publishedDate: new Date('2016-11-18T17:11:22Z'),
 
-  headline: 'Trump’s picks: how the new administration is taking shape',
+  headline: 'Donald Trump’s cabinet picks',
 
   // summary === standfirst (Summary is what the content API calls it)
-  summary: 'FT guide to the main players in the transition team and future cabinet',
+  summary: 'The FT guide to the cabinet nominees and White House officials of the incoming US administration.',
 
   topic: {
     name: 'Donald Trump',
@@ -22,8 +22,8 @@ export default () => ({ // eslint-disable-line
   },
 
   relatedArticle: {
-    text: 'Related article »',
-    url: 'https://en.wikipedia.org/wiki/Politics_and_the_English_Language',
+    text: 'Full coverage »',
+    url: 'https://www.ft.com/donald-trump',
   },
 
   mainImage: {
@@ -38,14 +38,17 @@ export default () => ({ // eslint-disable-line
   // if array of authors, url is optional
   byline: [
     { name: 'Claire Manibog', url: 'https://www.ft.com/stream/authorsId/ZGVhNjk2NmEtN2ZkNy00NDllLTkyODAtYjE2NWNmNjg0NTcx-QXV0aG9ycw==' },
+    { name: 'Barney Jopson', url: 'https://www.ft.com/stream/authorsId/Q0ItMDAwMDc5MA==-QXV0aG9ycw==' },
     { name: 'Ændrew Rininsland', url: 'https://www.ft.com/topics/authors/%C3%86ndrew_Rininsland' },
+    { name: 'Caroline Nevitt', url: 'https://www.ft.com/topics/authors/Caroline_Nevitt' },
+    { name: 'Martin Stabe', url: 'https://www.ft.com/stream/authorsId/Q0ItTVM1NDMyMQ==-QXV0aG9ycw==' },
   ],
 
   // Appears in the HTML <title>
-  title: 'Trump’s picks: how the new administration is taking shape',
+  title: 'Donald Trump’s cabinet picks',
 
   // meta data
-  description: 'FT guide to the main players in the transition team and future cabinet',
+  description: 'FT guide to the confirmation hearings and the future cabinet',
 
   /*
   TODO: Select Twitter card type -
