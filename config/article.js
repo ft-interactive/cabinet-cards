@@ -9,7 +9,7 @@ export default () => ({ // eslint-disable-line
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
-  publishedDate: new Date('2017-01-12T16:37:22Z'),
+  publishedDate: new Date('2017-01-12T17:55:22Z'),
 
   headline: 'Donald Trump’s cabinet picks',
 
