@@ -14,7 +14,7 @@ export default () => ({ // eslint-disable-line
   headline: 'Donald Trump’s cabinet picks',
 
   // summary === standfirst (Summary is what the content API calls it)
-  summary: 'The FT guide to the cabinet nominees and White House officials of the incoming US administration.',
+  summary: 'The FT guide to the incoming US administration',
 
   topic: {
     name: 'Donald Trump',
@@ -48,7 +48,7 @@ export default () => ({ // eslint-disable-line
   title: 'Donald Trump’s cabinet picks',
 
   // meta data
-  description: 'FT guide to the confirmation hearings and the future cabinet',
+  description: 'The FT guide to the incoming US administration',
 
   /*
   TODO: Select Twitter card type -
