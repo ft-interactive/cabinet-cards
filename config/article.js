@@ -9,7 +9,7 @@ export default () => ({ // eslint-disable-line
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
-  publishedDate: new Date('2016-11-18T17:11:22Z'),
+  publishedDate: new Date('2017-01-12T16:37:22Z'),
 
   headline: 'Donald Trump’s cabinet picks',
 
@@ -22,8 +22,8 @@ export default () => ({ // eslint-disable-line
   },
 
   relatedArticle: {
-    text: 'Full coverage »',
-    url: 'https://www.ft.com/donald-trump',
+    text: '',
+    url: '',
   },
 
   mainImage: {
