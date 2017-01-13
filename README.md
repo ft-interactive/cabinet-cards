@@ -1,6 +1,6 @@
 # [cabinet-cards](https://ig.ft.com/trump-cabinet/)
 
-> An experiment with using stream cards to create content
+> An experiment with using stream cards to create [a listicle-type story about Trump's cabinet appointments](https://ig.ft.com/sites/trump-cabinet/)
 
 [![Build Status][circle-image]][circle-url] [![Dependency Status][devdeps-image]][devdeps-url]
 
