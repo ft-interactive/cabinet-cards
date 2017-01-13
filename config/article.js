@@ -11,7 +11,7 @@ export default () => ({ // eslint-disable-line
   //       new Date('2016-05-17T17:11:22Z')
   publishedDate: new Date('2017-01-12T17:55:22Z'),
 
-  headline: 'Donald Trump's cabinet and administration',
+  headline: 'Donald Trump\’s cabinet and administration',
 
   // summary === standfirst (Summary is what the content API calls it)
   summary: 'The FT guide to the president-elect’s incoming team',
