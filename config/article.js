@@ -42,6 +42,7 @@ export default () => ({ // eslint-disable-line
     { name: 'Ændrew Rininsland', url: 'https://www.ft.com/topics/authors/%C3%86ndrew_Rininsland' },
     { name: 'Caroline Nevitt', url: 'https://www.ft.com/topics/authors/Caroline_Nevitt' },
     { name: 'Martin Stabe', url: 'https://www.ft.com/stream/authorsId/Q0ItTVM1NDMyMQ==-QXV0aG9ycw==' },
+    { name: 'Lauren Leatherby', url: 'https://www.ft.com/lauren-leatherby' },
   ],
 
   // Appears in the HTML <title>
