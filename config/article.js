@@ -14,7 +14,7 @@ export default () => ({ // eslint-disable-line
   headline: 'Donald Trump’s cabinet and administration',
 
   // summary === standfirst (Summary is what the content API calls it)
-  summary: 'The FT guide to the president-elect’s incoming team',
+  summary: 'The FT guide to the president’s incoming team',
 
   topic: {
     name: 'Donald Trump',
